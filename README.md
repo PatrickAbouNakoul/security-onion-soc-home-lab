@@ -21,6 +21,11 @@ The goal of this project was to build a small but realistic SOC environment wher
 
 A major part of the project involved troubleshooting the environment until Security Onion had visibility into the correct network segment.
 
+## Technical Documentation
+
+- **[Suricata Alert Analysis](docs/alert-analysis.md)** — Detailed investigation of Nmap reconnaissance detected by Security Onion and Suricata.
+- **[Troubleshooting & Lab Rebuild](docs/troubleshooting.md)** — Network visibility, interface configuration, Airgap deployment, routing, and connectivity troubleshooting.
+
 ## Lab Architecture
 
 ```text
