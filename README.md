@@ -299,6 +299,12 @@ One of the most important lessons from the project was:
 
 > A security monitoring platform can be functioning correctly and still detect nothing if it does not have visibility into the relevant traffic.
 
+### Detailed Troubleshooting
+
+For the full breakdown of the networking issues, Security Onion rebuild, interface troubleshooting, Airgap deployment, and connectivity validation:
+
+**[View Detailed Troubleshooting Documentation →](docs/troubleshooting.md)**
+
 ## Investigation Workflow
 
 The workflow I followed was:
