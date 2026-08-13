@@ -255,6 +255,12 @@ Nmap Scripting Engine
 
 The evidence correlated directly with the Nmap activity generated from the Kali attacker machine.
 
+### Detailed Investigation
+
+For the complete investigation workflow, evidence correlation, analyst reasoning, and investigation pivots:
+
+**[View Detailed Suricata Alert Analysis →](docs/alert-analysis.md)**
+
 ## Analyst Assessment
 
 I classified the activity as:
