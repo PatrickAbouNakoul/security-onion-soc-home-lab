@@ -4,6 +4,8 @@ A hands-on blue-team lab built in **Oracle VirtualBox** using **Security Onion 2
 
 The lab was designed to simulate attacker-to-victim network activity, monitor that traffic with Security Onion, validate **Suricata detections**, and investigate alerts using **Alerts, Dashboards, Hunt, and PCAP evidence**.
 
+![Security Onion SOC Home Lab](screenshots/homelab.png)
+
 ## Project Overview
 
 The goal of this project was to build a small but realistic SOC environment where I could:
@@ -54,6 +56,12 @@ Kali Linux → Ubuntu Victim → Monitored by Security Onion
 
 ## Lab Environment
 
+### Lab Environment Screenshots
+
+![Security Onion Lab Environment](screenshots/phase1.png)
+
+![Security Onion Lab Environment](screenshots/phase2.png)
+
 | Component                    | Configuration          |
 | ---------------------------- | ---------------------- |
 | Host System                  | Windows                |
@@ -90,6 +98,21 @@ I learned that successfully deploying a SIEM or IDS does not automatically mean 
 
 The monitored traffic needed to travel across the correct network segment.
 
+## Security Onion Deployment Verification
+
+After rebuilding Security Onion with the correct network design, I verified the platform using:
+
+```bash
+sudo so-status
+ip -br a
+```
+
+I confirmed that the core services were running, the management interface had `192.168.56.10/24`, `bond0` was active, and the system was ready to monitor traffic.
+
+![Security Onion deployment verification](screenshots/phase6.png)
+
+![Security Onion interface verification](screenshots/phase6-2.png)
+
 ## Ubuntu Victim Configuration
 
 Ubuntu was configured as the target system:
@@ -98,6 +121,10 @@ Ubuntu was configured as the target system:
 IP Address: 10.10.10.30/24
 Interface: enp0s3
 ```
+
+### Ubuntu Victim
+
+![Ubuntu victim configuration](screenshots/phase7.png)
 
 Example configuration:
 
@@ -125,6 +152,10 @@ Kali Linux was configured as the attacker system:
 IP Address: 10.10.10.20/24
 Interface: eth0
 ```
+
+### Kali Attacker
+
+![Kali Linux attacker configuration](screenshots/phase3.png)
 
 Example configuration:
 
@@ -209,11 +240,11 @@ ET SCAN Nmap Scripting Engine User-Agent Detected
 The associated traffic showed:
 
 ```text
-Source IP:       10.10.10.20
-Destination IP:  10.10.10.30
+Source IP:        10.10.10.20
+Destination IP:   10.10.10.30
 Destination Port: 8000
-Interface:       bond0
-Protocol:        HTTP
+Interface:        bond0
+Protocol:         HTTP
 
 HTTP Request:
 OPTIONS / HTTP/1.1
